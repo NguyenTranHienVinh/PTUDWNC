@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\TipsAndTricks",
+    "\\TipsAndTricks\\TatBlog.Core",
+    "\\TipsAndTricks\\TatBlog.Data",
+    "\\TipsAndTricks\\TatBlog.Data\\Mappings"
   ],
+  "SelectedNode": "\\TipsAndTricks\\TatBlog.Data\\Mappings\\AuthorMap.cs",
   "PreviewInSolutionExplorer": false
 }
