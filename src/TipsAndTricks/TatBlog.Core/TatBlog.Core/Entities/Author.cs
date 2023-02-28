@@ -27,6 +27,6 @@ public class Author :IEntity
     int IEntity.Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     IList<Post> IEntity.Posts { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     // danh sách các bài viết của chuyên mục
-    //public IList<Post> Posts { get; set; }
+    public IList<Post> Posts { get; set; }
 
 }

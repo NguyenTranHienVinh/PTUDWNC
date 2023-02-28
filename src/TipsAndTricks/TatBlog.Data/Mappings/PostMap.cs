@@ -7,9 +7,12 @@ using System.Linq;
 using System.Text;
 using TatBlog.Core.Entities;
 
-namespace TatBlog.Data.Mappings
+namespace TatBlog.Data.Mappings;
+
+internal class PostMap : IEntityTypeConfiguration<Post>
 {
-    internal class PostMap
+    public void Configure(EntityTypeBuilder<Post> builder)
     {
+        throw new NotImplementedException();
     }
 }
