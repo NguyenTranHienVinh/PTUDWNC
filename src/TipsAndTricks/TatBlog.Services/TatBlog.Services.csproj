@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -7,15 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TatBlog.Core\TatBlog.Core\TatBlog.Core.csproj" />
+    <ProjectReference Include="..\TatBlog.Core\TatBlog.Core.csproj" />
     <ProjectReference Include="..\TatBlog.Data\TatBlog.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Blogs\" />
-    <Folder Include="Extensios\" />
     <Folder Include="Media\" />
     <Folder Include="Rss\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.3.1" />
   </ItemGroup>
 
 </Project>
