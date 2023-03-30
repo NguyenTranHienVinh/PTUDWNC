@@ -1,0 +1,17 @@
+D:\PTUDWNC-2023\TatBlog.Services\bin\Debug\net7.0\TatBlog.Services.deps.json
+D:\PTUDWNC-2023\TatBlog.Services\bin\Debug\net7.0\TatBlog.Services.dll
+D:\PTUDWNC-2023\TatBlog.Services\bin\Debug\net7.0\TatBlog.Services.pdb
+D:\PTUDWNC-2023\TatBlog.Services\bin\Debug\net7.0\TatBlog.Core.dll
+D:\PTUDWNC-2023\TatBlog.Services\bin\Debug\net7.0\TatBlog.Data.dll
+D:\PTUDWNC-2023\TatBlog.Services\bin\Debug\net7.0\TatBlog.Core.pdb
+D:\PTUDWNC-2023\TatBlog.Services\bin\Debug\net7.0\TatBlog.Data.pdb
+D:\PTUDWNC-2023\TatBlog.Services\obj\Debug\net7.0\TatBlog.Services.csproj.AssemblyReference.cache
+D:\PTUDWNC-2023\TatBlog.Services\obj\Debug\net7.0\TatBlog.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\PTUDWNC-2023\TatBlog.Services\obj\Debug\net7.0\TatBlog.Services.AssemblyInfoInputs.cache
+D:\PTUDWNC-2023\TatBlog.Services\obj\Debug\net7.0\TatBlog.Services.AssemblyInfo.cs
+D:\PTUDWNC-2023\TatBlog.Services\obj\Debug\net7.0\TatBlog.Services.csproj.CoreCompileInputs.cache
+D:\PTUDWNC-2023\TatBlog.Services\obj\Debug\net7.0\TatBlog.Services.csproj.CopyComplete
+D:\PTUDWNC-2023\TatBlog.Services\obj\Debug\net7.0\TatBlog.Services.dll
+D:\PTUDWNC-2023\TatBlog.Services\obj\Debug\net7.0\refint\TatBlog.Services.dll
+D:\PTUDWNC-2023\TatBlog.Services\obj\Debug\net7.0\TatBlog.Services.pdb
+D:\PTUDWNC-2023\TatBlog.Services\obj\Debug\net7.0\ref\TatBlog.Services.dll

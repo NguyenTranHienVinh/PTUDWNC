@@ -1,14 +1,29 @@
-using TatBlog.Core.Contracts;
+﻿using TatBlog.Core.Contracts;
 
 namespace TatBlog.Core.Entities;
 
+public enum SubscribeStatus
+{
+    None = -1,
+    Subscribe,
+    Unsubscribe,
+    Block
+}
+
 public class Subscriber : IEntity
 {
-  public int Id { get; set; }
-  public string SubscribeEmail { get; set; }
-  public DateTime SubDated { get; set; }
-  public DateTime UnSubDated { get; set; }
-  public string CancelReason { get; set; }
-  public bool ForceLock { get; set; }
-  public string AdminNotes { get; set; }
+    public Guid Id { get; set; }
+
+    public string Email { get; set; }
+
+    public DateTime DateSubscribe { get; set; }
+
+    public DateTime? DateUnSubscribe { get; set; }
+
+    public string Reason { get; set; }
+
+    public SubscribeStatus SubscribeStatus { get; set; }
+
+    public string Note { get; set; }
+
 }

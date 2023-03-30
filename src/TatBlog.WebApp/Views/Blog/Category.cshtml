@@ -1,0 +1,19 @@
+﻿
+
+@model IPagedList<Post>
+@{
+
+    var postQuery = (ViewBag.PostQuery as PostQuery) ?? new PostQuery();
+    ViewData["Title"] = $"Bài viết - {postQuery.CategorySlug}";
+}
+
+<div class="p-4">
+    <h3 class="text-primary mb-3">
+        Những bài viết của danh mục: '@postQuery.CategorySlug'
+    </h3>
+    @foreach (var item in Model)
+    {
+        @await Html.PartialAsync("_PostItem", item)
+    }
+    @await Html.PartialAsync("_Pager", Model)
+</div>

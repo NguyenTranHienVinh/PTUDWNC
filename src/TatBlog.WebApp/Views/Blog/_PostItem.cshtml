@@ -1,55 +1,78 @@
-@model Post
+﻿@model Post
 
 @{
-  var imageUrl = string.IsNullOrWhiteSpace(Model.ImageUrl) ? "/images/red_defqon1_mainstage_2016_4k-2.jpg" : $"/{Model.ImageUrl}";
+    var images = string.IsNullOrWhiteSpace(Model.ImageUrl) ? "/images/image_1.jpg" : $"/{Model.ImageUrl}";
 }
 
 <article class="blog-entry mb-4">
-  <div class="card">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="@imageUrl" alt="@Model.Title" class="card-img">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">
-            @Model.Title
-          </h5>
-          <p class="card-text">
-            <small class="text-muted">
-              Tác giả:
-            </small>
-            <span class="text-primary">
-              @Model.Author.FullName
-            </span>
-            <small class="text-muted">
-              Chủ đề:
-            </small>
-            <span class="text-primary">
-              @Model.Category.Name
-            </span>
-          </p>
-          <p class="card-text">
-            @Html.Raw(Model.ShortDescription)
-          </p>
-          <div class="tag-list">
-            <partial name="_TagList" model="@Model.Tags"/>
-          </div>
-          <div class="text-end">
-            <a class="btn btn-primary" 
-                title="@Model.Title"
-                asp-controller="Blog"
-                asp-action="Post"
-                asp-route-year="@Model.PostedDate.Year"
-                asp-route-month="@Model.PostedDate.Month"
-                asp-route-day="@Model.PostedDate.Day"
-                asp-route-slug="@Model.UrlSlug"
-                >
-              Xem chi tiết
-            </a>
-          </div>
+    <div class="card">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="@images"
+                     class="card-img"
+                     alt="@Model.Title"/>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <a class="text-decoration-none card-title text-dark fs-5"
+                       asp-area=""
+                       asp-controller="Blog"
+                       asp-action="Post"
+                       asp-route-year="@Model.PostedDate.Year"
+                       asp-route-month="@Model.PostedDate.Month"
+                       asp-route-day="@Model.PostedDate.Day"
+                       asp-route-slug="@Model.UrlSlug"
+                       title="@Model.Title">
+                        @Model.Title
+                    </a>
+                    <p class="card-text">
+                        <small class="text-muted">
+                            Tác giả:
+                        </small>
+                        <span class="text-primary">
+                            <a class="text-decoration-none"
+                               asp-area=""
+                               asp-controller="Blog"
+                               asp-action="Author"
+                               asp-route-slug="@Model.Author.UrlSlug"
+                               title="@Model.Author.FullName">
+                                @Model.Author.FullName
+                            </a>
+                        </span>
+                        <small class="text-muted">
+                            Chủ đề:
+                        </small>
+                        <span class="text-primary">
+                            <a class="text-decoration-none"
+                               asp-area=""
+                               asp-controller="Blog"
+                               asp-action="Category"
+                               asp-route-slug="@Model.Category.UrlSlug"
+                               title="@Model.Category.Description">
+                                @Model.Category.Name
+                            </a>
+                        </span>
+                    </p>
+                    <p class="card-text">
+                        @Html.Raw(Model.ShortDescription)
+                    </p>
+                    <div class="tag-list">
+                        @await Html.PartialAsync("_TagList", @Model.Tags)
+                    </div>
+                    <div class="text-end">
+                        <a asp-area=""
+                            asp-controller="Blog"
+                            asp-action="Post"
+                            asp-route-year="@Model.PostedDate.Year"
+                            asp-route-month="@Model.PostedDate.Month"
+                            asp-route-slug="@Model.UrlSlug"
+                            class="btn btn-primary"
+                            title="@Model.Title">
+                            Xem chi tiết
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </article>

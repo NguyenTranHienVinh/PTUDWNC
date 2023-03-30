@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PTUDWNC\\src\\TatBlog.Core\\TatBlog.Core.csproj": {}
+    "D:\\PTUDWNC-2023\\TatBlog.Core\\TatBlog.Core.csproj": {}
   },
   "projects": {
-    "D:\\PTUDWNC\\src\\TatBlog.Core\\TatBlog.Core.csproj": {
+    "D:\\PTUDWNC-2023\\TatBlog.Core\\TatBlog.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PTUDWNC\\src\\TatBlog.Core\\TatBlog.Core.csproj",
+        "projectUniqueName": "D:\\PTUDWNC-2023\\TatBlog.Core\\TatBlog.Core.csproj",
         "projectName": "TatBlog.Core",
-        "projectPath": "D:\\PTUDWNC\\src\\TatBlog.Core\\TatBlog.Core.csproj",
+        "projectPath": "D:\\PTUDWNC-2023\\TatBlog.Core\\TatBlog.Core.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\PTUDWNC\\src\\TatBlog.Core\\obj\\",
+        "outputPath": "D:\\PTUDWNC-2023\\TatBlog.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

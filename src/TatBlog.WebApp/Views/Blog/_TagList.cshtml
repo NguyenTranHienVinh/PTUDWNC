@@ -1,12 +1,14 @@
+﻿
 @model IList<Tag>
 
-@foreach (var item in Model)
+@foreach (var tag in Model)
 {
-  <a class="btn btn-sm btn-outline-secondary"
-      title="Tag: @item.Name"
-      asp-controller="Blog"
-      asp-action="Tag"
-      asp-route-slug="@item.UrlSlug">
-    @item.Name
-  </a>
+    <a
+        asp-controller="Blog"
+        asp-action="Tag"
+        asp-route-slug="@tag.UrlSlug"
+        title="Tag: @tag.Name"
+        class="btn btn-sm btn-outline-secondary">
+        @tag.Name
+    </a>
 }
