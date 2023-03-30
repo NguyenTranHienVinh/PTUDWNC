@@ -1,17 +1,24 @@
-<div class="my-4">
-  <partial name="_SearchForm" />
-  
-  @await Component.InvokeAsync("CategoriesWidget")
-  
-  <h1>
-    Bài viết nổi bật
-  </h1>
-  
-  <h1>
-    Đăng kí nhận tin mới
-  </h1>
-  
-  <h1>
-    Tag cloud
-  </h1>
+﻿<div class="my-4">
+    <partial name="_SearchForm"/>
+
+    @await Component.InvokeAsync("CategoriesWidget")
+
+    @await Component.InvokeAsync("ArchivesWidget")
+
+    @await Component.InvokeAsync("FeaturedPostsWidget")
+
+    @await Component.InvokeAsync("RandomPostsWidget")
+
+    @await Component.InvokeAsync("BestAuthorsWidget")
+
+    @await Component.InvokeAsync("TagCloudWidget")
+
+    <button class="btn btn-outline-secondary ">
+        <a asp-controller="Newsletter"
+           asp-action="Subscribe"
+           class="text-black-50">
+            Đăng ký nhận tin 
+        </a>
+    </button>
+
 </div>

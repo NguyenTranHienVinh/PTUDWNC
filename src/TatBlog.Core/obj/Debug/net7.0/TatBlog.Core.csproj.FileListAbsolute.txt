@@ -1,0 +1,12 @@
+D:\PTUDWNC-2023\TatBlog.Core\bin\Debug\net7.0\TatBlog.Core.deps.json
+D:\PTUDWNC-2023\TatBlog.Core\bin\Debug\net7.0\TatBlog.Core.dll
+D:\PTUDWNC-2023\TatBlog.Core\bin\Debug\net7.0\TatBlog.Core.pdb
+D:\PTUDWNC-2023\TatBlog.Core\obj\Debug\net7.0\TatBlog.Core.csproj.AssemblyReference.cache
+D:\PTUDWNC-2023\TatBlog.Core\obj\Debug\net7.0\TatBlog.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\PTUDWNC-2023\TatBlog.Core\obj\Debug\net7.0\TatBlog.Core.AssemblyInfoInputs.cache
+D:\PTUDWNC-2023\TatBlog.Core\obj\Debug\net7.0\TatBlog.Core.AssemblyInfo.cs
+D:\PTUDWNC-2023\TatBlog.Core\obj\Debug\net7.0\TatBlog.Core.csproj.CoreCompileInputs.cache
+D:\PTUDWNC-2023\TatBlog.Core\obj\Debug\net7.0\TatBlog.Core.dll
+D:\PTUDWNC-2023\TatBlog.Core\obj\Debug\net7.0\refint\TatBlog.Core.dll
+D:\PTUDWNC-2023\TatBlog.Core\obj\Debug\net7.0\TatBlog.Core.pdb
+D:\PTUDWNC-2023\TatBlog.Core\obj\Debug\net7.0\ref\TatBlog.Core.dll

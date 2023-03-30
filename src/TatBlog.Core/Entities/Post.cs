@@ -1,54 +1,41 @@
-using TatBlog.Core.Contracts;
+﻿using TatBlog.Core.Contracts;
 
-namespace TatBlog.Core.Entities;
-
-public class Post : IEntity
+namespace TatBlog.Core.Entities
 {
-  // Mã bài viết
-  public int Id { get; set; }
+    public class Post : IEntity
+    {
+        public Guid Id { get; set; }
+        
+        public string Title { get; set; }
+        
+        public string ShortDescription { get; set; }
+        
+        public string Description { get; set; }
 
-  // Tiêu đề bài viết
-  public string Title { get; set; }
+        // Meta data
+        public string Meta { get; set; }
 
-  // Mô tả hay giới thiệu ngắn về nội dung
-  public string ShortDescription { get; set; }
+        public string UrlSlug { get; set; }
 
-  // Nội dung chi tiết của bài viết
-  public string Description { get; set; }
+        public string ImageUrl { get; set; }
 
-  // Metadata
-  public string Meta { get; set; }
+        public int ViewCount { get; set; }
 
-  // Tên định danh để tạo URL
-  public string UrlSlug { get; set; }
+        public bool Published { get; set; }
 
-  // Đường dấn đến tập tinh hình ảnh
-  public string ImageUrl { get; set; }
+        public DateTime PostedDate { get; set; }
 
-  // Số lượt xem, đọc bài viết
-  public int ViewCount { get; set; }
+        public DateTime? ModifiedDate { get; set; }
 
-  // Trạng thái của bài viết
-  public bool Published { get; set; }
+        public Guid CategoryId { get; set; }
 
-  // Ngày giờ đăng bài
-  public DateTime PostedDate { get; set; }
+        public Guid AuthorId { get; set; }
 
-  // Ngày giờ cập nhập lần cuối
-  public DateTime? ModifiedDate { get; set; }
+        public Category Category { get; set; }
 
-  // Mã chuyên mục
-  public int CategoryId { get; set; }
+        public Author Author { get; set; }
 
-  // Mã tác giả của bài viết
-  public int AuthorId { get; set; }
-
-  // Chuyên mục của bài viết
-  public Category Category { get; set; }
-
-  // Tác giả của bài viết
-  public Author Author { get; set; }
-
-  // Danh sách các từ khóa của bài viết
-  public IList<Tag> Tags { get; set; }
+        public IList<Tag> Tags { get; set; }
+        public IList<Comment> Comments { get; set; }
+    }
 }

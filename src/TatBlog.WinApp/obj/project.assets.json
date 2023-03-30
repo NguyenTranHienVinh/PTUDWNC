@@ -243,18 +243,6 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Tools/7.0.3": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": "7.0.3"
-        },
-        "compile": {
-          "lib/net6.0/_._": {}
-        },
-        "runtime": {
-          "lib/net6.0/_._": {}
-        }
-      },
       "Microsoft.Extensions.Caching.Abstractions/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -661,6 +649,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/Mono.TextTemplating.dll": {}
+        }
+      },
+      "SlugGenerator/2.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp2.0/SlugGenerator.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/SlugGenerator.dll": {}
         }
       },
       "System.Buffers/4.5.1": {
@@ -1175,6 +1172,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "SlugGenerator": "2.0.2",
           "System.Linq.Dynamic.Core": "1.2.25",
           "TatBlog.Core": "1.0.0",
           "TatBlog.Data": "1.0.0"
@@ -1499,31 +1497,6 @@
         "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.xml",
         "microsoft.entityframeworkcore.sqlserver.7.0.3.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlserver.nuspec"
-      ]
-    },
-    "Microsoft.EntityFrameworkCore.Tools/7.0.3": {
-      "sha512": "yHFlYPZS3Jx7JMCQnGKfJzv95rJWVcmcUn/OW5cbCyWgQk81JJpTZ9Q6kkvwquYjFRfvYHBGuXNIYhAJokOBTQ==",
-      "type": "package",
-      "path": "microsoft.entityframeworkcore.tools/7.0.3",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "lib/net6.0/_._",
-        "microsoft.entityframeworkcore.tools.7.0.3.nupkg.sha512",
-        "microsoft.entityframeworkcore.tools.nuspec",
-        "tools/EntityFrameworkCore.PS2.psd1",
-        "tools/EntityFrameworkCore.PS2.psm1",
-        "tools/EntityFrameworkCore.psd1",
-        "tools/EntityFrameworkCore.psm1",
-        "tools/about_EntityFrameworkCore.help.txt",
-        "tools/init.ps1",
-        "tools/net461/any/ef.exe",
-        "tools/net461/win-arm64/ef.exe",
-        "tools/net461/win-x86/ef.exe",
-        "tools/netcoreapp2.0/any/ef.dll",
-        "tools/netcoreapp2.0/any/ef.runtimeconfig.json"
       ]
     },
     "Microsoft.Extensions.Caching.Abstractions/7.0.0": {
@@ -2157,6 +2130,22 @@
         "lib/netstandard2.0/Mono.TextTemplating.dll",
         "mono.texttemplating.2.2.1.nupkg.sha512",
         "mono.texttemplating.nuspec"
+      ]
+    },
+    "SlugGenerator/2.0.2": {
+      "sha512": "YnZfqVSdEaD+Ulif5GihlnrQjhSKpA4iDxC+S8i344w90IkBWjGDqYBRbl4aO47kXIDoFyUvWJWzvWNO6LLhXw==",
+      "type": "package",
+      "path": "sluggenerator/2.0.2",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/SlugGenerator.dll",
+        "lib/netcoreapp2.0/SlugGenerator.dll",
+        "lib/netstandard2.0/SlugGenerator.dll",
+        "sluggenerator.2.0.2.nupkg.sha512",
+        "sluggenerator.nuspec",
+        "tools/install.ps1"
       ]
     },
     "System.Buffers/4.5.1": {
@@ -3579,7 +3568,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "Microsoft.EntityFrameworkCore.Tools >= 7.0.3",
+      "Microsoft.EntityFrameworkCore.Design >= 7.0.3",
       "TatBlog.Core >= 1.0.0",
       "TatBlog.Data >= 1.0.0",
       "TatBlog.Services >= 1.0.0"
@@ -3592,11 +3581,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PTUDWNC\\src\\TatBlog.WinApp\\TatBlog.WinApp.csproj",
+      "projectUniqueName": "D:\\PTUDWNC-2023\\TatBlog.WinApp\\TatBlog.WinApp.csproj",
       "projectName": "TatBlog.WinApp",
-      "projectPath": "D:\\PTUDWNC\\src\\TatBlog.WinApp\\TatBlog.WinApp.csproj",
+      "projectPath": "D:\\PTUDWNC-2023\\TatBlog.WinApp\\TatBlog.WinApp.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\PTUDWNC\\src\\TatBlog.WinApp\\obj\\",
+      "outputPath": "D:\\PTUDWNC-2023\\TatBlog.WinApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3618,14 +3607,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\PTUDWNC\\src\\TatBlog.Core\\TatBlog.Core.csproj": {
-              "projectPath": "D:\\PTUDWNC\\src\\TatBlog.Core\\TatBlog.Core.csproj"
+            "D:\\PTUDWNC-2023\\TatBlog.Core\\TatBlog.Core.csproj": {
+              "projectPath": "D:\\PTUDWNC-2023\\TatBlog.Core\\TatBlog.Core.csproj"
             },
-            "D:\\PTUDWNC\\src\\TatBlog.Data\\TatBlog.Data.csproj": {
-              "projectPath": "D:\\PTUDWNC\\src\\TatBlog.Data\\TatBlog.Data.csproj"
+            "D:\\PTUDWNC-2023\\TatBlog.Data\\TatBlog.Data.csproj": {
+              "projectPath": "D:\\PTUDWNC-2023\\TatBlog.Data\\TatBlog.Data.csproj"
             },
-            "D:\\PTUDWNC\\src\\TatBlog.Services\\TatBlog.Services.csproj": {
-              "projectPath": "D:\\PTUDWNC\\src\\TatBlog.Services\\TatBlog.Services.csproj"
+            "D:\\PTUDWNC-2023\\TatBlog.Services\\TatBlog.Services.csproj": {
+              "projectPath": "D:\\PTUDWNC-2023\\TatBlog.Services\\TatBlog.Services.csproj"
             }
           }
         }
@@ -3640,7 +3629,7 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Tools": {
+          "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",

@@ -1,6 +1,7 @@
-namespace TatBlog.Core.Contracts;
-
-public interface IEntity
+﻿namespace TatBlog.Core.Contracts
 {
-  int Id { get; set; }
+    internal interface IEntity
+    {
+        Guid Id { get; set; }
+    }
 }

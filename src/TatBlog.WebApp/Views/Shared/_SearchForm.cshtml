@@ -1,22 +1,22 @@
-<div class="mb-4">
-  <form method="get"
+﻿<div class="mb-4">
+    <form
+        asp-area=""
         asp-controller="Blog"
         asp-action="Index"
-  >
-    <div class="input-group mb-3">
-      <input type="text" 
-              class="form-control"
-              name="title"
-              placeholder="Enter Title"
-              aria-label="Enter Title"
-              aria-describedby="btnSearchPost"
-              >
-      <button type="submit" 
-              class="btn btn-outline-secondary"
-              id="btnSearchPost"
-              >
-        <i class="fa fa-search"></i>
-      </button>
-    </div>
-  </form>
+        method="get">
+        <div class="input-group mb-3">
+            <input type="text"
+                   class="form-control"
+                   name="k"
+                   placeholder="Enter keyword"
+                   aria-label="Enter keyword"
+                   aria-describedby="btnSearchPost"/>
+
+            <button class="btn btn-outline-secondary"
+                    type="submit"
+                    id="btnSearchPost">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </form>
 </div>

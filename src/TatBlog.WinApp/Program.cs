@@ -1,204 +1,229 @@
-﻿using TatBlog.Core.Entities;
+﻿
+
+using Microsoft.Identity.Client;
+using TatBlog.Core;
+using TatBlog.Core.Collections;
+using TatBlog.Core.Contracts;
+using TatBlog.Core.DTO;
+using TatBlog.Core.Entities;
 using TatBlog.Data.Contexts;
-using TatBlog.Data.Seeders;
+using TatBlog.Data.Seeder;
 using TatBlog.Services.Blogs;
-using TatBlog.WinApp;
-using static System.Console;
-
-// Tạo đối tượng DbContext để quản lý phiên làm việc
-// với CSDL và trạng thái của các đối tượng
-var context = new BlogDbContext();
-
-// Tạo đối tượng khởi tạo dữ liệu mẫu
-// var seeder = new DataSeeder(context);
-
-// Gọi hàm Initialize để nhập dữ liệu mẫu
-// seeder.Initialize();
-
-// Đọc danh sách tác giả từ cơ sở dữ liệu
-// var authors = context.Authors.ToList();
-
-// Xuất danh sách tác giả ra màn hình
-// WriteLine("{0, -4}{1, -30}{2, -30}{3, 12}", "ID", "ID", "Full Name", " Email", "Joined Date");
-
-// foreach (var author in authors)
-// {
-//   WriteLine("{0, -4}{1, -30}{2, -30}{3, 12:MM/dd/yyyy}", author.Id, author.FullName, author.Email, author.JoinedDate);
-// }
-
-// Đọc danh sách bài viết từ csdl
-// Lấy kèm tên tác giả và chuyên mục
-// var posts = context.Posts
-//                    .Where(p => p.Published)
-//                    .OrderBy(p => p.Title)
-//                    .Select(p => new
-//                    {
-//                      Id = p.Id,
-//                      Title = p.Title,
-//                      ViewCount = p.ViewCount,
-//                      PostedDate = p.PostedDate,
-//                      Author = p.Author.FullName,
-//                      Category = p.Category.Name
-//                    })
-//                    .ToList();
-
-// Tạo đối tượng BlogRepository
-IBlogRepository blogRepository = new BlogRepository(context);
-goto execute;
-// Tìm 3 bài viết được xem/ đọc nhiều nhất
-// var posts = await blogRepository.GetPopularArticlesAsync(3);
-
-// Xuất danh sách bài viết ra màn hình
-// foreach (var post in posts)
-// {
-//   WriteLine($"ID        : {post.Id}");
-//   WriteLine($"Title     : {post.Title}");
-//   WriteLine($"View      : {post.ViewCount}");
-//   WriteLine("Date       : {0:MM/dd/yyyy}", post.PostedDate);
-//   WriteLine($"Author    : {post.Author.FullName}");
-//   WriteLine($"Category  : {post.Category.Name}");
-//   WriteLine("".PadRight(80, '-'));
-// }
-
-// var categories = await blogRepository.GetCategoriesAsync();
-
-// Tạo đối tượng chứa tham số phân trang
-// var pagingParams = new PagingParams
-// {
-//   PageNumber = 1,         // Lây kết quả ở trang số 1
-//   PageSize = 5,           // Lấy 5 mẫu tin
-//   SortColumn = "Name",    // Sắp xếp theo tên
-//   SortOrder = "DESC"      // Theo chiều giảm dần
-// };
-
-// Lấy danh sách từ khóa
-// var tagList = await blogRepository.GetPagedTagsAsync(pagingParams);
-
-// WriteLine("{0, -5}{1, -50}{2, 10}", "ID", "Name", "Count");
-
-// foreach (var item in categories)
-// {
-//   WriteLine("{0, -5}{1, -50}{2, 10}", item.Id, item.Name, item.PostCount);
-// }
 
 
-// a. Tìm một thẻ (Tag) theo tên định danh (slug) 
-WriteLine("\nTìm một thẻ (Tag) theo tên định danh (slug)");
-var tagBySlug = await blogRepository.GetTagBySlugAsync("google");
-WriteLine("{0, -20}{1, -50}{2, 10}", "Name", "Description", "Slug");
-WriteLine("{0, -20}{1, -50}{2, 10}", tagBySlug.Name, tagBySlug.Description, tagBySlug.UrlSlug);
 
-// c. Lấy danh sách tất cả các thẻ (Tag) kèm theo số bài viết chứa thẻ đó. Kết
-// quả trả về kiểu IList<TagItem>.
-WriteLine("\nLấy danh sách tất cả các thẻ (Tag) kèm theo số bài viết chứa thẻ đó. Kết quả trả về kiểu IList<TagItem>.");
-var tagListWithPostCount = await blogRepository.GetTagListWithPostCountAsync();
-WriteLine("{0, -5}{1, -50}{2, 10}", "ID", "Name", "Count");
-foreach (var tag in tagListWithPostCount)
-{
-  WriteLine("{0, -5}{1, -50}{2, 10}", tag.Id, tag.Name, tag.PostCount);
-}
+//var context = new BlogDbContext();
+//var seeder = new DataSeeder(context);
+//seeder.Initialize();
 
-// d. Xóa một thẻ theo mã cho trước. 
-// await blogRepository.DeleteTagByIdAsync(null);
+//IBlogRepository blogRepo = new BlogRepository(context);
+//IAuthorRepository authorRepo = new AuthorRepository(context);
+//ISubscriberRepository subRepo = new SubscriberRepository(context);
 
-// e. Tìm một chuyên mục (Category) theo tên định danh (slug)
-WriteLine("\nTìm một chuyên mục (Category) theo tên định danh (slug)");
-var categoryBySlug = await blogRepository.GetCategoryBySlugAsync("net-core");
-WriteLine("{0, -20}{1, -50}{2, 10}", "Name", "Description", "Slug");
-WriteLine("{0, -20}{1, -50}{2, 10}", categoryBySlug.Name, categoryBySlug.Description, categoryBySlug.UrlSlug);
+#region Show Authors
 
-// f. Tìm một chuyên mục theo mã số cho trước
-WriteLine("\nTìm một chuyên mục theo mã số cho trước");
-var categoryById = await blogRepository.GetCategoryByIdAsync(10);
-WriteLine("{0, -20}{1, -50}{2, 10}", "Name", "Description", "Slug");
-WriteLine("{0, -20}{1, -50}{2, 10}", categoryById.Name, categoryById.Description, categoryById.UrlSlug);
+//var authors = conext.Authors.ToList();
 
-// g. Thêm hoặc cập nhật một chuyên mục/chủ đề
-#region Add/Edit không test
+//Console.WriteLine("{0, -40}{1, -30}{2, -30}{3, 12:MM/dd/yyyy}",
+//    "ID", "Full Name", "Email", "Joined Date");
 
-// WriteLine("\nThêm một chuyên mục/chủ đề");
-// Category category = new Category
-// {
-//   Name = "ABC",
-//   Description = "Des for ABC",
-//   UrlSlug = "abc",
-//   ShowOnMenu = true
-// };
-// await blogRepository.AddCategoryAsync(category);
-// WriteLine("\nChuyên mục/chủ đề sau khi thêm");
-// WriteLine("{0, -20}{1, -50}{2, 10}", "Name", "Description", "Slug");
-// WriteLine("{0, -20}{1, -50}{2, 10}", category.Name, category.Description, category.UrlSlug);
-
-// WriteLine("\nSửa một chuyên mục/chủ đề");
-// category = new Category
-// {
-//   Name = "ABC edit",
-//   Description = "Des for ABC edit",
-//   UrlSlug = "abc edit",
-//   ShowOnMenu = false
-// };
-// await blogRepository.EditCategoryAsync(category);
-// WriteLine("\nChuyên mục/chủ đề sau khi thêm");
-// WriteLine("{0, -20}{1, -50}{2, 10}", "Name", "Description", "Slug");
-// WriteLine("{0, -20}{1, -50}{2, 10}", category.Name, category.Description, category.UrlSlug);
+//foreach (var author in authors)
+//{
+//    Console.WriteLine("{0, -40}{1, -30}{2, -30}{3, 12:MM/dd/yyyy}",
+//        author.Id, author.FullName, author.Email, author.JoinedDate);
+//}
 
 #endregion
 
-// h. Xóa một chuyên mục theo mã số cho trước. 
-// await blogRepository.DeleteCategoryByIdAsync(null);
+#region Show post
+
+//var posts = context.Posts.Where(p => p.Published)
+//    .OrderBy(p => p.Title)
+//    .Select(p => new
+//    {
+//        Id = p.Id,
+//        Title = p.Title,
+//        ViewCount = p.ViewCount,
+//        PostedDate = p.PostedDate,
+//        Author = p.Author,
+//        Category = p.Category
+//    }).ToList();
+
+
+#endregion
+
+#region Blog repository
+
+//IBlogRepository blogRepo = new BlogRepository(context);
+
+//var posts = await blogRepo.GetPopularArticlesAsync(3);
+
+////PrintPosts(posts);
+
+//var category = await blogRepo.GetCategoriesAsync();
+
+//PrintCategories(category);
+
+//subRepo.UnSubscribeAsync("2014478@dlu.edu.vn", "Hủy đăng ký");
+
+//var paringParams = new PagingParams()
+//{
+//    PageNumber = 1,
+//    PageSize = 5,
+//    SortColumn = "Email",
+//    SortOrder = "DESC"
+//};
+
+//var sub = await subRepo.SubscribeAsync("2014478@dlu.edu.vn");
+
+
+
+//Console.WriteLine("{0, -40}{1, -30}{2, -30}{3, 12}", sub.Id, sub.Email, sub.Reason, sub.Note);
+
+#endregion
+
+#region Phân trang
+//var paringParams = new PagingParams()
+//{
+//    PageNumber = 1,
+//    PageSize = 5,
+//    SortColumn = "PostCount",
+//    SortOrder = "DESC"
+//};
+
+//var tagsList = await blogRepo.GetPagedTagsAsync(paringParams);
+
+//Console.WriteLine("{0, -40}{1, -50}{2, 10}", "Id", "Name", "Count");
+
+//foreach (var tagItem in tagsList)
+//{
+//    Console.WriteLine("{0, -40}{1, -50}{2, 10}", tagItem.Id, tagItem.Name, tagItem.PostCount);
+//}
+
+
+
+//PostQuery postQuery = new()
+//{
+//    CategoryId = Guid.Parse("885771be-ef28-4c85-a896-5919ecca366e")
+//};
+
+//var postList = await blogRepo.GetPagedPostsQueryAsync(paringParams, postQuery);
+
+//foreach (var post in postList)
+//{
+//    Console.WriteLine("{0, -40}{1, -50}{2, 10}", post.Id, post.Title, post.Author.FullName);
+//}
+
+
+#endregion
+
+#region Bài tập
+
+
+// c.Lấy danh sách tất cả các thẻ (Tag) kèm theo số bài viết chứa thẻ đó. Kết 
+// quả trả về kiểu IList<TagItem>.
+
+//var tagList = await blogRepo.GetTagsAsync();
+
+//foreach (var tagItem in tagList)
+//{
+//    Console.WriteLine("{0, -40}{1, -50}{2, 10}", tagItem.Id, tagItem.Name, tagItem.PostCount);
+//}
+
+// d. Xóa một thẻ theo mã cho trước. 
+
+//await blogRepo.DeleteTagByIdAsync(Guid.Parse("9fdc3139-b1fb-483a-8df9-4d993d242035"));
+
+//var tagList = await blogRepo.GetTagsAsync();
+
+
+//foreach (var tagItem in tagList)
+//{
+//    Console.WriteLine("{0, -40}{1, -50}{2, 10}", tagItem.Id, tagItem.Name, tagItem.PostCount);
+//}
+
+// e. Tìm một chuyên mục (Category) theo tên định danh (slug). 
+
+//var category = await blogRepo.GetCategoryBySlugAsync("net-core");
+//Console.WriteLine("{0, -40}{1, -50}{2, 10}",
+//    category.Id, category.Name, category.UrlSlug);
+
+//f. Tìm một chuyên mục theo mã số cho trước
+
+//var newCategory = new Category()
+//{
+//    Id = Guid.Parse("bcca0f65-4ed9-4898-a160-08db1b1030e1"),
+//    Name = "GitLab 1",
+//    UrlSlug = "git-lab-1"
+//};
+
+//var category = await blogRepo.AddOrUpdateCategoryAsync(newCategory);
+
+//Console.WriteLine("{0, -40}{1, -50}{2, 10}",
+//    category.Id, category.Name, category.UrlSlug);
+
+//var categories = await blogRepo.GetCategoriesAsync();
+//PrintCategories(categories);
+
+//h. Xóa một chuyên mục theo mã số cho trước. 
+
+//await blogRepo.DeleteCategoryByIdAsync(Guid.Parse("a78f98e2-0c4f-41dc-47da-08db1b1079dd"));
+//var categories = await blogRepo.GetCategoriesAsync();
+//PrintCategories(categories);
 
 // i. Kiểm tra tên định danh (slug) của một chuyên mục đã tồn tại hay chưa. 
-WriteLine("\nKiểm tra tên định danh (slug) của một chuyên mục đã tồn tại hay chưa");
-var existedSlug = await blogRepository.CheckCategorySlugExisted("net-core");
-WriteLine("\nSlug net-core is " + (existedSlug ? "exists" : "does not exist"));
 
-// j. Lấy và phân trang danh sách chuyên mục, kết quả trả về kiểu
-// IPagedList<CategoryItem>.
+//var check = await blogRepo.IsCategorySlugExistedAsync("git-lab-2");
 
-WriteLine("\nLấy và phân trang danh sách chuyên mục, kết quả trả về kiểu IPagedList<CategoryItem>.");
-// Tạo đối tượng chứa tham số phân trang
-var pagingParams = new PagingParams
-{
-  PageNumber = 1,         // Lây kết quả ở trang số 1
-  PageSize = 5,           // Lấy 5 mẫu tin
-  SortColumn = "Name",    // Sắp xếp theo tên
-  SortOrder = "DESC"      // Theo chiều giảm dần
-};
+//Console.WriteLine(check);
 
-// Lấy danh sách từ khóa
-var tagList = await blogRepository.GetPagedCategoriesAsync(pagingParams);
+// j. Lấy và phân trang danh sách chuyên mục, kết quả trả về kiểu 
+// <CategoryItem>.
 
-WriteLine("{0, -5}{1, -50}{2, 10}", "ID", "Name", "Post Count");
+//var paringParams = new PagingParams()
+//{
+//    PageNumber = 1,
+//    PageSize = 5,
+//    SortColumn = "PostCount",
+//    SortOrder = "DESC"
+//};
 
-foreach (var item in tagList)
-{
-  WriteLine("{0, -5}{1, -50}{2, 10}", item.Id, item.Name, item.PostCount);
-}
+//var categories = await blogRepo.GetPagedCategoriesAsync(paringParams);
 
-// k. Đếm số lượng bài viết trong N tháng gần nhất. N là tham số đầu vào. Kết
-// quả là một danh sách các đối tượng chứa các thông tin sau: Năm, Tháng, Số
-// bài viết.
+//Console.WriteLine("{0, -40}{1, -50}{2, 10}",
+//    "ID", "Name", "Count");
 
-WriteLine("\nĐếm số lượng bài viết trong N tháng gần nhất. N là tham số đầu vào. Kết quả là một danh sách các đối tượng chứa các thông tin sau: Năm, Tháng, Số bài viết.");
-var postCount = await blogRepository.CountPostInMonthAsync(2);
+//foreach (var category in categories)
+//{
+//    Console.WriteLine("{0, -40}{1, -50}{2, 10}",
+//        category.Id, category.Name, category.PostCount);
+//}
 
-WriteLine("{0, -30}{1, -20}{2, 20}", "Post Count", "Year", "Month");
 
-foreach (var item in postCount)
-{
-  WriteLine("{0, -30}{1, -20}{2, 20}", item.Count, item.Year, item.Month);
-}
+#endregion
 
-// l. Tìm một bài viết theo mã số. 
+//void PrintPosts(IList<Post> posts)
+//{
+//    foreach (var post in posts)
+//    {
+//        Console.WriteLine("Id: {0}", post.Id);
+//        Console.WriteLine("Title: {0}", post.Title);
+//        Console.WriteLine("ViewCount: {0}", post.ViewCount);
+//        Console.WriteLine("PostedDate: {0}", post.PostedDate);
+//        Console.WriteLine("Author: {0}", post.Author.FullName);
+//        Console.WriteLine("Category: {0}", post.Category.Name);
+//        Console.WriteLine("".PadRight(80, '-'));
+//    }
+//}
 
-WriteLine("\nTìm một bài viết theo mã số. ");
-var postById = await blogRepository.GetPostByIdAsync(10);
-WriteLine("{0, -20}{1, -50}{2, 10}", "Name", "Description", "Slug");
-WriteLine("{0, -20}{1, -50}{2, 10}", postById.Title, postById.Description, postById.UrlSlug);
+//void PrintCategories(IList<CategoryItem> categories)
+//{
+//    Console.WriteLine("{0, -40}{1, -50}{2, 10}",
+//        "ID", "Name", "Count");
 
-// m. Thêm hay cập nhật một bài viết. 
-
-// ---------------
-
-execute:
-WriteLine("");
+//    foreach (var category in categories)
+//    {
+//        Console.WriteLine("{0, -40}{1, -50}{2, 10}",
+//            category.Id, category.Name, category.PostCount);
+//    }
+//}

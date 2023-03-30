@@ -1,22 +1,20 @@
-@model IPagedList<Post>
-
+﻿@model IPagedList<Post>
 @{
-  ViewData["Title"] = "Trang chủ";
-  var postQuery = (ViewData["PostQuery"] as PostQuery) ?? new PostQuery();
+    ViewData["Title"] = "Trang chủ";
+
+    var postQuery = (ViewBag.PostQuery as PostQuery) ?? new PostQuery();
 }
 
 <div class="p-4">
-  @if (!string.IsNullOrWhiteSpace(postQuery.Title))
-  {
-    <h3 class="text-primary mb-3">
-      Những bài viết chứa tiêu đề '@postQuery.Title'
-    </h3>
-  }
-  
-  @foreach (var postItem in Model)
-  {
-    <partial name="_PostItem" model="postItem"/>
-  }
-
-  <partial name="_Pager" model="@Model"/>
+    @if (!string.IsNullOrWhiteSpace(postQuery.Keyword))
+    {
+        <h3 class="text-primary mb-3">
+            Những bài viết chứa từ khóa '@postQuery.Keyword'
+        </h3>
+    }
+    @foreach (var item in Model)
+    {
+        @await Html.PartialAsync("_PostItem", item)
+    }
+    @await Html.PartialAsync("_Pager", Model)
 </div>
