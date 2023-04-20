@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PTUDWNC-2023\\TatBlog.WebApp\\TatBlog.WebApp.csproj": {}
+    "D:\\PTUDWNC\\src\\TatBlog.WebApp\\TatBlog.WebApp.csproj": {}
   },
   "projects": {
-    "D:\\PTUDWNC-2023\\TatBlog.Core\\TatBlog.Core.csproj": {
+    "D:\\PTUDWNC\\src\\TatBlog.Core\\TatBlog.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PTUDWNC-2023\\TatBlog.Core\\TatBlog.Core.csproj",
+        "projectUniqueName": "D:\\PTUDWNC\\src\\TatBlog.Core\\TatBlog.Core.csproj",
         "projectName": "TatBlog.Core",
-        "projectPath": "D:\\PTUDWNC-2023\\TatBlog.Core\\TatBlog.Core.csproj",
+        "projectPath": "D:\\PTUDWNC\\src\\TatBlog.Core\\TatBlog.Core.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\PTUDWNC-2023\\TatBlog.Core\\obj\\",
+        "outputPath": "D:\\PTUDWNC\\src\\TatBlog.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -64,14 +64,14 @@
         }
       }
     },
-    "D:\\PTUDWNC-2023\\TatBlog.Data\\TatBlog.Data.csproj": {
+    "D:\\PTUDWNC\\src\\TatBlog.Data\\TatBlog.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PTUDWNC-2023\\TatBlog.Data\\TatBlog.Data.csproj",
+        "projectUniqueName": "D:\\PTUDWNC\\src\\TatBlog.Data\\TatBlog.Data.csproj",
         "projectName": "TatBlog.Data",
-        "projectPath": "D:\\PTUDWNC-2023\\TatBlog.Data\\TatBlog.Data.csproj",
+        "projectPath": "D:\\PTUDWNC\\src\\TatBlog.Data\\TatBlog.Data.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\PTUDWNC-2023\\TatBlog.Data\\obj\\",
+        "outputPath": "D:\\PTUDWNC\\src\\TatBlog.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -93,8 +93,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\PTUDWNC-2023\\TatBlog.Core\\TatBlog.Core.csproj": {
-                "projectPath": "D:\\PTUDWNC-2023\\TatBlog.Core\\TatBlog.Core.csproj"
+              "D:\\PTUDWNC\\src\\TatBlog.Core\\TatBlog.Core.csproj": {
+                "projectPath": "D:\\PTUDWNC\\src\\TatBlog.Core\\TatBlog.Core.csproj"
               }
             }
           }
@@ -144,14 +144,14 @@
         }
       }
     },
-    "D:\\PTUDWNC-2023\\TatBlog.Services\\TatBlog.Services.csproj": {
+    "D:\\PTUDWNC\\src\\TatBlog.Services\\TatBlog.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PTUDWNC-2023\\TatBlog.Services\\TatBlog.Services.csproj",
+        "projectUniqueName": "D:\\PTUDWNC\\src\\TatBlog.Services\\TatBlog.Services.csproj",
         "projectName": "TatBlog.Services",
-        "projectPath": "D:\\PTUDWNC-2023\\TatBlog.Services\\TatBlog.Services.csproj",
+        "projectPath": "D:\\PTUDWNC\\src\\TatBlog.Services\\TatBlog.Services.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\PTUDWNC-2023\\TatBlog.Services\\obj\\",
+        "outputPath": "D:\\PTUDWNC\\src\\TatBlog.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -173,11 +173,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\PTUDWNC-2023\\TatBlog.Core\\TatBlog.Core.csproj": {
-                "projectPath": "D:\\PTUDWNC-2023\\TatBlog.Core\\TatBlog.Core.csproj"
+              "D:\\PTUDWNC\\src\\TatBlog.Core\\TatBlog.Core.csproj": {
+                "projectPath": "D:\\PTUDWNC\\src\\TatBlog.Core\\TatBlog.Core.csproj"
               },
-              "D:\\PTUDWNC-2023\\TatBlog.Data\\TatBlog.Data.csproj": {
-                "projectPath": "D:\\PTUDWNC-2023\\TatBlog.Data\\TatBlog.Data.csproj"
+              "D:\\PTUDWNC\\src\\TatBlog.Data\\TatBlog.Data.csproj": {
+                "projectPath": "D:\\PTUDWNC\\src\\TatBlog.Data\\TatBlog.Data.csproj"
               }
             }
           }
@@ -221,14 +221,14 @@
         }
       }
     },
-    "D:\\PTUDWNC-2023\\TatBlog.WebApp\\TatBlog.WebApp.csproj": {
+    "D:\\PTUDWNC\\src\\TatBlog.WebApp\\TatBlog.WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PTUDWNC-2023\\TatBlog.WebApp\\TatBlog.WebApp.csproj",
+        "projectUniqueName": "D:\\PTUDWNC\\src\\TatBlog.WebApp\\TatBlog.WebApp.csproj",
         "projectName": "TatBlog.WebApp",
-        "projectPath": "D:\\PTUDWNC-2023\\TatBlog.WebApp\\TatBlog.WebApp.csproj",
+        "projectPath": "D:\\PTUDWNC\\src\\TatBlog.WebApp\\TatBlog.WebApp.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\PTUDWNC-2023\\TatBlog.WebApp\\obj\\",
+        "outputPath": "D:\\PTUDWNC\\src\\TatBlog.WebApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -250,14 +250,14 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\PTUDWNC-2023\\TatBlog.Core\\TatBlog.Core.csproj": {
-                "projectPath": "D:\\PTUDWNC-2023\\TatBlog.Core\\TatBlog.Core.csproj"
+              "D:\\PTUDWNC\\src\\TatBlog.Core\\TatBlog.Core.csproj": {
+                "projectPath": "D:\\PTUDWNC\\src\\TatBlog.Core\\TatBlog.Core.csproj"
               },
-              "D:\\PTUDWNC-2023\\TatBlog.Data\\TatBlog.Data.csproj": {
-                "projectPath": "D:\\PTUDWNC-2023\\TatBlog.Data\\TatBlog.Data.csproj"
+              "D:\\PTUDWNC\\src\\TatBlog.Data\\TatBlog.Data.csproj": {
+                "projectPath": "D:\\PTUDWNC\\src\\TatBlog.Data\\TatBlog.Data.csproj"
               },
-              "D:\\PTUDWNC-2023\\TatBlog.Services\\TatBlog.Services.csproj": {
-                "projectPath": "D:\\PTUDWNC-2023\\TatBlog.Services\\TatBlog.Services.csproj"
+              "D:\\PTUDWNC\\src\\TatBlog.Services\\TatBlog.Services.csproj": {
+                "projectPath": "D:\\PTUDWNC\\src\\TatBlog.Services\\TatBlog.Services.csproj"
               }
             }
           }

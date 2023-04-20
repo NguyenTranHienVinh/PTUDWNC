@@ -1779,7 +1779,7 @@
           }
         }
       },
-      "NLog/5.1.2": {
+      "NLog/5.1.3": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/NLog.dll": {
@@ -6354,10 +6354,10 @@
         "packageIcon.png"
       ]
     },
-    "NLog/5.1.2": {
-      "sha512": "JfQY93ure3IPVTN3eabBewBGvrcXcWIlaesFEXdy5UzIymfIT9yCgLISYtM0cOhjWziIaUr/6Z9NC2RwtjwrsQ==",
+    "NLog/5.1.3": {
+      "sha512": "rB8hwjBf1EZCfG5iPfsv3gPksLoJLr1cOrt7PBbJu6VpJgwYJchDzTUT1dhNDdPv0QakXJQJOhE59ErupcznQQ==",
       "type": "package",
-      "path": "nlog/5.1.2",
+      "path": "nlog/5.1.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -6374,7 +6374,7 @@
         "lib/netstandard1.5/NLog.xml",
         "lib/netstandard2.0/NLog.dll",
         "lib/netstandard2.0/NLog.xml",
-        "nlog.5.1.2.nupkg.sha512",
+        "nlog.5.1.3.nupkg.sha512",
         "nlog.nuspec"
       ]
     },
@@ -10858,11 +10858,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PTUDWNC-2023\\TatBlog.WebApp\\TatBlog.WebApp.csproj",
+      "projectUniqueName": "D:\\PTUDWNC\\src\\TatBlog.WebApp\\TatBlog.WebApp.csproj",
       "projectName": "TatBlog.WebApp",
-      "projectPath": "D:\\PTUDWNC-2023\\TatBlog.WebApp\\TatBlog.WebApp.csproj",
+      "projectPath": "D:\\PTUDWNC\\src\\TatBlog.WebApp\\TatBlog.WebApp.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\PTUDWNC-2023\\TatBlog.WebApp\\obj\\",
+      "outputPath": "D:\\PTUDWNC\\src\\TatBlog.WebApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -10884,14 +10884,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\PTUDWNC-2023\\TatBlog.Core\\TatBlog.Core.csproj": {
-              "projectPath": "D:\\PTUDWNC-2023\\TatBlog.Core\\TatBlog.Core.csproj"
+            "D:\\PTUDWNC\\src\\TatBlog.Core\\TatBlog.Core.csproj": {
+              "projectPath": "D:\\PTUDWNC\\src\\TatBlog.Core\\TatBlog.Core.csproj"
             },
-            "D:\\PTUDWNC-2023\\TatBlog.Data\\TatBlog.Data.csproj": {
-              "projectPath": "D:\\PTUDWNC-2023\\TatBlog.Data\\TatBlog.Data.csproj"
+            "D:\\PTUDWNC\\src\\TatBlog.Data\\TatBlog.Data.csproj": {
+              "projectPath": "D:\\PTUDWNC\\src\\TatBlog.Data\\TatBlog.Data.csproj"
             },
-            "D:\\PTUDWNC-2023\\TatBlog.Services\\TatBlog.Services.csproj": {
-              "projectPath": "D:\\PTUDWNC-2023\\TatBlog.Services\\TatBlog.Services.csproj"
+            "D:\\PTUDWNC\\src\\TatBlog.Services\\TatBlog.Services.csproj": {
+              "projectPath": "D:\\PTUDWNC\\src\\TatBlog.Services\\TatBlog.Services.csproj"
             }
           }
         }
